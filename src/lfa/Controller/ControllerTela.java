@@ -11,7 +11,9 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.swing.JPanel;
 import static jdk.nashorn.internal.objects.NativeError.printStackTrace;
 import lfa.View.Tela;
@@ -32,7 +34,6 @@ public class ControllerTela {
         this.tela = tela;
         this.mapa = new JPanel[10][10];
         tela.getjPanelMenu2().setBackground(Color.WHITE);
-        this.velocidade = tela.getjSlider1().getValue();
         this.tool = new Tools();
         this.run = Runtime.getRuntime();
     }
@@ -125,6 +126,15 @@ public class ControllerTela {
             }
         }
         tela.getjLabelFraseStatus().setText("Pronto para iniciar!");
+    }
+    
+    public void defineDestino(String destino) throws IOException{
+        
+        try (FileWriter arquivo = new FileWriter(System.getProperty("java.class.path")
+                +tool.barra()+"python-graph-master"+tool.barra()+"core"+tool.barra()+"destino.txt")) {
+            PrintWriter gravarArquivo = new PrintWriter(arquivo);
+            gravarArquivo.printf(destino);
+        }
     }
     
     public void resetarMapa(){

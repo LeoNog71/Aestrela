@@ -6,14 +6,21 @@ class node():
     h = 0
     custo = None
     id = None
-    historico = []
+    historico = None
     valor = 0
+    node = None
     
     def __init__(self,h,custo,id):
         self.h = h
         self.custo = custo
         self.id = id
-        
+
+    def setNode(self, node):
+        self.node = node
+
+    def getNode(self):
+        return self.node
+
     def getHeuristic(self):
         return self.h
 
@@ -36,11 +43,8 @@ class node():
         return self.historico
         
     def setHistorico(self,posicao):
-        self.historico.append(posicao)
-    
-    def resetHistorico(self):
-        self.historico = []
-
+        self.historico = posicao
+  
 
 class matrizNumerica():
     
