@@ -134,7 +134,9 @@ public class ControllerTela {
                 +tool.barra()+"python-graph-master"+tool.barra()+"core"+tool.barra()+"destino.txt")) {
             PrintWriter gravarArquivo = new PrintWriter(arquivo);
             gravarArquivo.printf(destino);
+            arquivo.close();
         }
+        
     }
     
     public void resetarMapa(){
