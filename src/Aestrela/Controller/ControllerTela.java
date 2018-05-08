@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lfa.Controller;
+package Aestrela.Controller;
 
 
 import java.awt.Color;
@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import javax.swing.JPanel;
 import static jdk.nashorn.internal.objects.NativeError.printStackTrace;
-import lfa.View.Tela;
+import Aestrela.View.Tela;
 
 /**
  *
