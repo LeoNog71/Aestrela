@@ -27,6 +27,7 @@ public class ControllerTela {
     private Tela tela;
     private JPanel[][] mapa;
     private int velocidade;
+    
     private Tools tool;
     private final Runtime run ;
     
