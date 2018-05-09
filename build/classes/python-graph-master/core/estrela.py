@@ -34,20 +34,22 @@ class busca():
         while True:
        
             exp.append(self.grafo.neighbors(listaFechada[len(listaFechada)-1]))
-            
+        
+
             if listaFechada in exp[len(exp)-1]:
                 for i in exp[len(exp)-1]:
                     if i in listaFechada:
                         del i
             try:
-
+              
                 for i in range(0,len(exp[len(exp)-1])):
+                    
                     exp[len(exp)-1][i].setValor(self.grafo.edge_weight((listaFechada[len(listaFechada)-1],exp[len(exp)-1][i]))+listaFechada[len(listaFechada)-1].getValor())
                     exp[len(exp)-1][i].setNode(listaFechada[len(listaFechada)-1])
                     listaAberta[(exp[len(exp)-1][i].getValor()+exp[len(exp)-1][i].getHeuristic())] = exp[len(exp)-1][i]
 
             except IndexError:
-                print("erro no index")
+                print("erro no indexaaa")
                 pass   
             
             ordenar = sorted(listaAberta)
@@ -60,6 +62,9 @@ class busca():
     
             
             if listaFechada[len(listaFechada)-1].getId() == self.objetivo:
+                print(listaFechada[len(listaFechada)-1].getValor())
+                if listaFechada[len(listaFechada)-1].getValor() > 1000000:
+                    return "false"
                 i = listaFechada[len(listaFechada)-1]
 
                 while i.getId() != "0x0":

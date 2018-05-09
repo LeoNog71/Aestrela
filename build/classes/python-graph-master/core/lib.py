@@ -51,12 +51,12 @@ class matrizNumerica():
     def getMatriz(self):
 
         matriz = []
-        custos = [1,10,4,20]
+        custos = [1,10,4,20,1000000,1,10,4,20]
 
         for i in range(0,10):
             matriz.append([])
             for j in range(0,10):
-                matriz[i].append(custos[random.randrange(0,4,1)])
+                matriz[i].append(custos[random.randrange(0,9,1)])
         return matriz
     
 
@@ -72,6 +72,7 @@ class matrizNodes():
         for i in range(0,10):
             for j in range(0,10):
                 self.matriz[i][j] = node(((9-i)+(9-j))*2 ,self.matriz[i][j],(str(i)+"x"+str(j)))
+
                 
         return self.matriz
 

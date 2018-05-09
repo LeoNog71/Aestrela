@@ -2111,7 +2111,7 @@ public class Tela extends javax.swing.JFrame {
         try {
             controllerTela.iniciarBusca();
         } catch (IOException ex) {
-            Logger.getLogger(Tela.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex);
         }catch (InterruptedException ex) {
             Logger.getLogger(Tela.class.getName()).log(Level.SEVERE, null, ex);
         }

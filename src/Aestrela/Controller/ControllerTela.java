@@ -17,6 +17,7 @@ import java.io.PrintWriter;
 import javax.swing.JPanel;
 import static jdk.nashorn.internal.objects.NativeError.printStackTrace;
 import Aestrela.View.Tela;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -74,16 +75,25 @@ public class ControllerTela {
         BufferedReader leitor = new BufferedReader(arquivoLeitura);
         int k =0;
         String teste = leitor.readLine();
-        String [] vet = teste.split(" ");
-        
-        for (String vet1 : vet) {
-            String[] aux = vet1.split("x");
+        if(teste.equals("false")){
+            JOptionPane.showMessageDialog(null, "Caminho impossivel");
+            resetarMapa();
+        }else{
             
-            this.mapa[Integer.valueOf(aux[0])][Integer.valueOf(aux[1])].setBackground(Color.BLUE);
+            String [] vet = teste.split(" ");
+
+            for (String vet1 : vet) {
+                String[] aux = vet1.split("x");
+                if(this.mapa[Integer.valueOf(aux[0])][Integer.valueOf(aux[1])].getBackground().equals(Color.BLACK)){
+                    continue;
+                }
+                this.mapa[Integer.valueOf(aux[0])][Integer.valueOf(aux[1])].setBackground(Color.BLUE);
+            }
+            tela.getjButtonIniciar().setEnabled(false);
+            tela.getjButton1().setEnabled(true);
+            tela.getjButtonGerar().setEnabled(!true);
         }
-        tela.getjButtonIniciar().setEnabled(false);
-        tela.getjButton1().setEnabled(true);
-        tela.getjButtonGerar().setEnabled(!true);
+        
         
     }
     public void gerarMapa(Integer [][] matriz){
