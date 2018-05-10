@@ -97,7 +97,7 @@ public class ControllerTela {
         
     }
     public void gerarMapa(Integer [][] matriz){
-        rodarAestrela();
+        
         tela.getjButtonIniciar().setEnabled(true);
         tela.getjButton1().setEnabled(true);
         tela.getjButtonGerar().setEnabled(!true);

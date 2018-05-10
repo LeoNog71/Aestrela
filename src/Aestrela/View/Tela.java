@@ -25,6 +25,7 @@ public class Tela extends javax.swing.JFrame {
     public Tela() {
         initComponents();
         controllerTela = new ControllerTela(this);
+        controllerTela.rodarAestrela();
     }
 
     /**
@@ -2119,6 +2120,7 @@ public class Tela extends javax.swing.JFrame {
 
     private void jButtonReiniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonReiniciarActionPerformed
         controllerTela.resetarMapa();
+        controllerTela.rodarAestrela();
     }//GEN-LAST:event_jButtonReiniciarActionPerformed
 
     private void jTFDestinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFDestinoActionPerformed

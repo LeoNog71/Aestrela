@@ -51,7 +51,7 @@ class matrizNumerica():
     def getMatriz(self):
 
         matriz = []
-        custos = [1,10,4,20,1000000,1,10,4,20]
+        custos = [1,10,1000,4,20,1,1000,4,20]
 
         for i in range(0,10):
             matriz.append([])
@@ -71,8 +71,7 @@ class matrizNodes():
     def gerador(self):
         for i in range(0,10):
             for j in range(0,10):
-                self.matriz[i][j] = node(((9-i)+(9-j))*2 ,self.matriz[i][j],(str(i)+"x"+str(j)))
-
+                self.matriz[i][j] = node(((9-i)+(9-j)) ,self.matriz[i][j],(str(i)+"x"+str(j)))
                 
         return self.matriz
 
